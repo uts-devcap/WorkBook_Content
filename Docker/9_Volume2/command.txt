@@ -1,0 +1,14 @@
+docker volume create new-vol
+docker inspect new-vol
+docker run -d --name MyJenkins -p 50000:50000 -p 8080:8080 --mount source=new-vol,target=/var/jenkins_home jenkins/jenkins
+docker exec MyJenkins cat /var/jenkins_home/secrets/initialAdminPassword
+#install plugins
+# create admin
+# start jenkins
+# create a job
+docker rm -f MyJenkins
+docker run -d --name NewJenkins -p 50000:50000 -p 8080:8080 --mount source=new-vol,target=/var/jenkins_home jenkins/jenkins
+docker rm -f NewJenkins
+
+
+

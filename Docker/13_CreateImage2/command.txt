@@ -1,0 +1,6 @@
+vi Dockerfile
+docker build . -t anjurose/myapp:latest
+docker push anjurose/myapp:latest
+docker run -d --name PythonApp -p 5000:5000 anjurose/myapp:latest
+docker rm -f PythonApp
+#access the application at browser http://<Ip address>:5000

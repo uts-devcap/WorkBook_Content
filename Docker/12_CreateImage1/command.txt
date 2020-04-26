@@ -1,0 +1,11 @@
+docker run -it --name MyUbuntu ubuntu:latest
+#install git and vim
+#check installation with git --version and vim --version command
+docker ps
+docker commit MyUbuntu anjurose/devmachine:version1
+docker login
+docker push anjurose/devmachine:version1
+docker run -it --name NewMachine anjurose/devmachine:version1
+#verify if the git and vim is present
+docker rm -f NewMachine
+

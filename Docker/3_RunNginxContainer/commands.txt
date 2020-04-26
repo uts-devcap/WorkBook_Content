@@ -1,0 +1,2 @@
+docker run --name MyNginx -p 8080:80 nginx:latest
+docker rm -f MyNginx

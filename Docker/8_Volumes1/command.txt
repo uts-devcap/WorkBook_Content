@@ -1,0 +1,15 @@
+docker create volume my-vol
+docker inspect volume my-vol
+docker run -d --name MyJenkins -v my-vol:/var/jenkins_home -p 50000:50000 -p 8080:8080 jenkins/jenkins
+docker ps
+docker exec MyJenkins cat /var/jenkins_home/secrets/initialAdminPassword
+# copy the string to unlock the Jenkins
+# Installn the suggested plugins
+# create admin user
+# start jenkins
+# create a freestyle job
+docker rm -f MyJenkins
+docker inspect volume my-vol
+cd /var/lib/docker/volumes/my-vol/_data
+ls
+docker run -d --name MyNewJenkins -v my-vol:/var/jenkins_home -p 50000:50000 -p 8080:8080 jenkins/jenkins

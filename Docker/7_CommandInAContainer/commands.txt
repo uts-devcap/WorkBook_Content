@@ -1,0 +1,3 @@
+#MyUbuntu is the running container that we have created in the previous task
+docker exec MyUbuntu ls
+docker exec MyUbuntu apt-get update

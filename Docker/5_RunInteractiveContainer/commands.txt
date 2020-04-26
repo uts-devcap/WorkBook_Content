@@ -1,0 +1,15 @@
+docker run -it --name MyUbuntu ubuntu
+#inside the container run the following commands
+    pwd
+    ls
+    mkdir Anju
+    cd Anju
+    echo "Hello world " >> hello.txt
+    cd ..
+    ls
+    cd Anju
+    ls
+    cat hello.txt
+# ctrl p + q
+docker ps
+docker rm -f MyUbuntu
